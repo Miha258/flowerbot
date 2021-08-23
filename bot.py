@@ -3109,6 +3109,6 @@ async def help(ctx):
   embed.set_footer(text = 'v 1.0.1 by Miha')  
   await ctx.send(embed = embed)
 
-bot.run('NzYxMjA0NTA1NTI1NjE2NjQ4.X3XM8A.4d64lshb3kQgFxUC6Jzt1UbFsl8')
+bot.run(os.environ('TOKEN'))
 
 
