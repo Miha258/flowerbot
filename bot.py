@@ -128,7 +128,7 @@ async def on_ready():
     for member in guild.members:
      if member.bot == False:
       if cursor.execute(f"SELECT id FROM serverss_db WHERE id = {member.id} ").fetchone() is None:
-        cursor.execute(f"INSERT INTO serverss_db (name,id,cash,timess,when_climed,names) VALUES('{member}',{member.id},{0},{0},{0},'{member.display_name}')")
+        cursor.execute(f'INSERT INTO serverss_db (name,id,cash,timess,when_climed,names) VALUES("{member}",{member.id},{0},{0},{0},"{member.display_name}")')
         conection.commit()
       
   for guild in bot.guilds:
@@ -142,7 +142,7 @@ async def on_ready():
    for member in guild.members:
     if member.bot == False:
      if cursor.execute(f"SELECT id FROM warninform WHERE id = {member.id}").fetchone() is None: 
-       cursor.execute(f"INSERT INTO warninform (name,id,warns,type,reason,timess,admin) VALUES('{member}',{member.id},{0},'','','','')")
+       cursor.execute(f'INSERT INTO warninform (name,id,warns,type,reason,timess,admin) VALUES("{member}",{member.id},{0},'','','','')')
        conection.commit()
      
   for guild in bot.guilds:
@@ -167,7 +167,6 @@ async def on_ready():
          
 @bot.event
 async def on_command_error(ctx,error):
-  
   if isinstance(error,discord.ext.commands.errors.MissingAnyRole):  
       await ctx.send(embed = discord.Embed(description = f'**⚙️У вас нет прав на использование команды {ctx.invoked_with}⚙️**',color = 0xff1111))
   elif isinstance(error,discord.ext.commands.errors.RoleNotFound):
@@ -200,7 +199,6 @@ async def on_command_error(ctx,error):
 
 @bot.event
 async def on_member_remove(member):
-  print(1)
   cursor.execute(f'DELETE FROM serverss_db WHERE id = {member.id}')
   conection.commit()
   cursor.execute(f'DELETE FROM log WHERE id = {member.id}')
@@ -3109,6 +3107,6 @@ async def help(ctx):
   embed.set_footer(text = 'v 1.0.1 by Miha')  
   await ctx.send(embed = embed)
 
-bot.run(os.environ('TOKEN'))
+bot.run('NzYxMjA0NTA1NTI1NjE2NjQ4.X3XM8A.4d64lshb3kQgFxUC6Jzt1UbFsl8')
 
 
