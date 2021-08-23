@@ -30,3 +30,4 @@ tqdm==4.54.0
 urllib3==1.26.6
 Werkzeug==1.0.1
 yarl==1.5.1
+pytz==2021.1
