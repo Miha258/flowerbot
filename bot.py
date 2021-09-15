@@ -142,7 +142,7 @@ async def on_ready():
    for member in guild.members:
     if member.bot == False:
      if cursor.execute(f"SELECT id FROM warninform WHERE id = {member.id}").fetchone() is None: 
-       cursor.execute(f'INSERT INTO warninform (name,id,warns,type,reason,timess,admin) VALUES("{member}",{member.id},{0},'','','','')')
+       cursor.execute(f"INSERT INTO warninform (name,id,warns,type,reason,timess,admin) VALUES('{member}',{member.id},{0},'','','','')")
        conection.commit()
      
   for guild in bot.guilds:
