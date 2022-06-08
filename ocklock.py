@@ -1,7 +1,3 @@
-
-
-
-
 class Clock:
 
   __DAY = 86400
