@@ -5,7 +5,7 @@ import sqlite3
 import time
 import asyncio
 import datetime
-from oclock import Clock
+from clock import Clock
 import gifs
 import random
 import io
