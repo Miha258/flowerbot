@@ -1,5 +1,7 @@
 import sqlite3
 
+conection = sqlite3.connect('server.db')
+cursor = conection.cursor()
 
 cursor.execute("""CREATE TABLE IF NOT EXISTS serverss_db (
       name TEXT,
