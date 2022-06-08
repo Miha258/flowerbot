@@ -14,7 +14,7 @@ import requests
 from PIL import Image,ImageFont,ImageDraw
 from dashboard import draw_progress
 import pytz
-from db import create_tables
+from db import *
 
 intents = discord.Intents.all()
 bot = commands.Bot(command_prefix = '!',intents = intents)
